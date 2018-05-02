@@ -1,0 +1,24 @@
+[HEADER ugd=|_void.ugd|/]
+[checkSession param=|default|/]
+<!DOCTYPE html>
+<html lang="en-UK">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>[site.title] / backoffice : [title]</title>
+	[Services::makeInstance class=|UGServicesCSSInjector|/]
+	[UGServicesCSSInjector instanceName=|service| fn=|load| files=|ug-reset.css,ug-responsive-layout.css,ug-bckffc-layout.css,ug-bckffc-form.css,ug-bckffc-typo.css,ug-bckffc-custom.css|/]
+	
+	<script type="text/javascript" src="//code.jquery.com/jquery.min.js"></script>
+	<script type="text/javascript" src="//code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+	
+	<script type="text/javascript" src="../scripts/js/jquery-all-form.js"></script>
+	<script type="text/javascript" src="../scripts/js/jquery-bckffc-calls.js"></script>
+</head>
+<body>
+	<div id="message"></div>
+	<div id="debug"></div>
+	<div id="page">
+		<nav>
+			[rubrique type=|root| tpl=|../templates/bckffc/bckffc-nav-list-item.tpl|/]
+			<li><a href="bckffc-login.php">Déconnexion</a></li>
+		</nav>

@@ -1,0 +1,9 @@
+fc2.htaccess
+templates/fc2/*
+settings/conf.php
+settings/conf.fc2.php
+scripts/php/ext/private/*
+scripts/php/lib/phpmailer/*
+scripts/php/lib/fpdf/*
+scripts/php/lib/fc2/*
+scripts/js/jquery-monopage-menu.js

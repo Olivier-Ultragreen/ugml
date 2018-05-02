@@ -1,0 +1,2 @@
+DEFEXT=Services::makeInstance=> Services::makeInstance|public/ug-services-css.php
+DEFEXT=UGServicesCSSInjector=> UGServicesCSSInjector::call|public/ug-services-css.php

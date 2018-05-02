@@ -1,0 +1,4 @@
+[HEADER ugd=|ug-bckffc.ugd| lang=|fr| country=|FR| title=|connexion| nav=|!ok| type=|main| position=|00|/]
+[include file=|../templates/bckffc/bckffc-start.ugml|/]
+[login tpl=|../templates/bckffc/bckffc-action-login.tpl| onsuccess=|bckffc-user|/]
+[include file=|../templates/bckffc/bckffc-stop.ugml|/]

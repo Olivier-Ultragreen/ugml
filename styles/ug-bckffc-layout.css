@@ -1,0 +1,180 @@
+html	{min-height:100%;}
+body	{min-width:950px;height:100%;}
+/* PROPRIETES GENERALES DE LA PAGE */
+#page {
+	display:block;
+	width:100%;
+	padding:0px;
+	min-height:600px;
+	height:100%;
+}
+header		{
+	height:54px;
+	background: transparent url(../media/_images/logo.jpg) no-repeat 1em center;
+	border-bottom: 1px solid #999;
+	padding:1em 0px;
+}
+nav 		{
+	display:block;
+	float:left;
+	min-width:200px;
+	min-height:500px;
+	width:15%;
+	margin-right:1%;
+	border-right: 1px solid #999;
+	padding:2em 0px;
+}
+nav h2		{margin-top:2em;text-transform:uppercase}
+nav ul		{
+	display:block;
+	border-top: 1px solid #999;
+}
+nav ul li	{
+	border-bottom: 1px solid #999;
+}
+nav li a 	{
+	display: block;
+	padding:3px 31px 4px 5px;
+	
+	text-align:right;
+}
+nav li a:hover,
+nav li.selected a {
+	background-color:[supergreen];
+}
+/* ////////////////////
+/// CONTENT - info   */
+#content		{
+	float:left;
+	min-width:700px !important;
+	width:70%;
+	/*overflow-x: scroll;*/
+	padding-top:2em;
+}
+#bckffc-login		{
+	float:left;
+	min-width:700px !important;
+	width:70%;
+	overflow-x: hidden;
+	padding-top:2em;
+	margin-left:15%;
+}
+
+#globalActions	{
+	width:90%;
+	min-width:700px;
+}
+/* GLOBAL ACTIONS */
+.actionGlobales {
+	display:block;
+	float:right;
+	background-color:[ultragreen];
+	color:white;
+	font-weight:bold;
+	margin:0px 1em;
+}
+a.actionGlobales {
+	padding:1em 2em;
+	border-radius:0.5em;
+}
+#globalActions .import {
+	display:inline-block;
+	float:right;
+}
+#globalActions .import label {
+	display:inline-block;
+	background-color:[ultragreen];
+	color:white;
+	font-weight:bold;
+	margin:0px;
+	padding:1em 2em;
+	border-top-left-radius:0.5em;
+	border-bottom-left-radius:0.5em;
+	
+}
+#globalActions .import input[type="file"] {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+#globalActions .import input[type="submit"] {
+	display:inline-block;
+	background-color:[ultragreen];
+	color:white;
+	font-weight:bold;
+	margin-left:0px;
+	margin-right:1em;
+	padding:1em 2em;
+	border-top-right-radius:0.5em;
+	border-bottom-right-radius:0.5em;
+	border:none;
+	border-left:1px solid grey;
+	font-size:12px;
+	font-family:Arial;
+}
+
+form.actionGlobales {width:360px;}
+/**/
+#searchForm {display:block;}
+
+#content table{
+	min-width:700px;
+	width:100%;
+	border: 1px solid #bfbfbf;
+}
+
+#content tbody tr:nth-child(2n) td {background-color:#efefef;}
+
+#content th {
+	color:#fff; background-color: [ultragreen]; vertical-align: middle;
+	border-color: #888; border-style: solid; border-width: 0 1px 1px 0;
+	padding:1em;
+	text-transform:uppercase;
+}
+#content th a{color:#fff; text-decoration: none; display: block; padding:3px 5px 4px 5px; }
+#content th a:hover{color:#000; }
+#content th.action {
+	color:#fff;
+	background-color: #000;
+	text-align:center;
+}
+#content th.action a{color:#fff; text-decoration: none; text-align: center;}
+#content th.action a:hover{color:#666;}
+
+
+#content td{
+	padding:2px 5px 3px 5px; vertical-align: middle;
+	border-color: #bfbfbf; border-style: solid; border-width: 0 1px 1px 0;
+}
+#content td.action{color:#fff; background-color: #666; text-align: center; border-color: #888; width:105px;}
+#content td.action a{color: #fff; text-decoration: none;}
+#content td.action a:hover{color: #000;}
+
+#content td.action a.bckffcActionMove{display:none;}
+#content td.action a.bckffcActionChangeUserGroup{display:none;}
+
+#content td.action a.bckffcActionChangeStatus{display:none;}
+#content td.action a.bckffcActionChangeStatus{display:none;}
+
+.actionGlobales{display:block}
+
+#content .selected td{background-color: #8c8c8c; color:#fff;}
+#content .selected td.action{background-color: #333; }
+
+#content td.thumb		{height:35px;}
+#content td.thumb img	{margin-top:2px;}
+#content td .divposi	{padding:5px 0; margin:0px 2px; width:50px; text-align: center;}
+#content td .divposi img{vertical-align:middle; margin:0;}
+#content td .position	{padding:3px; margin:0 3px;}
+
+#content table.texteditor tr.even td{background-color: lightgrey;border:none;padding:0px;}
+
+.paging.top {padding:1em 0px;margin:0px 1em 1em 1em;}
+.paging.bottom {padding:1em 0px;margin:0px 1em 0px 3em;}
+.paging a {padding:1em 1em;background-color:[ultragreen];border-radius:0.5em;color:white;margin:0px 1em;}
+.paging.bottom a {padding:0px;background-color:white;border-radius:none;color:black;}
+
+#groupActionForm {padding:1em 0px;margin:0px 1em 0px 1em;}

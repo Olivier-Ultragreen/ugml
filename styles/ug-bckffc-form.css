@@ -1,0 +1,99 @@
+#bckffcForm fieldset				{display: block; float:left; min-width:680px;width:100%;margin-bottom:7px;}
+#bckffcForm label					{display:block; float:left; min-width:150px; width:150px; text-align: right; padding:2px 15px 0 0;}
+#bckffcForm input[type="text"]		{display:block; float:left; width:200px;border: 1px solid [ultragreen];}
+#bckffcForm input[type="password"]	{display:block; float:left; width:200px;border: 1px solid [ultragreen];}
+#bckffcForm select					{display:block; float:left; width:200px;margin-right:1em;}
+
+#bckffcForm table		{border: 1px solid #bfbfbf; min-width:565px; width:75%;}
+#bckffcForm fieldset ul.depthLevel1 {
+	width:200px;
+	position:absolute;
+	z-index:30;
+	background-color:#e0f0e0;
+	padding-left:1em;
+}
+
+#bckffcForm .data-list {
+	display:none;
+}
+#bckffcForm .full {
+	width:100% !important;
+}
+
+.button				{
+	background-color:[ultragreen];
+	color:white;
+	font-weight:bold;
+	text-decoration:none;
+	display:inline-block;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	height:100%;
+	padding:3px 5px;
+	margin-right:1em;
+	border:none;
+	width:200px;
+}
+
+#message {
+	position:fixed !important;
+	top:50px !important;
+	left:50% !important;
+	width:500px;
+	margin-left:-250px !important;
+	color:red !important;
+	border: 1px solid red !important;
+	background-color:white;
+	padding:5px 20px 20px 20px;
+	display:none;
+}
+.error {
+	color:red;
+}
+.error input, .error select {
+	color:red !important;
+	border-color:red !important;
+}
+a.close {
+	display:block;
+	float:right;
+}
+
+
+#bckffcForm table		{border: 1px solid #bfbfbf; min-width:565px; width:75%;}
+#bckffcForm fieldset ul.depthLevel1 {
+	width:200px;
+	position:absolute;
+	z-index:30;
+	background-color:#e0f0e0;
+	padding-left:1em;
+}
+
+#bckffcForm .checklist {
+	padding:1em;
+	border: 1px solid [ultragreen];
+}
+#bckffcForm .checklist legend {
+	border: 1px solid [ultragreen];
+	border-bottom:none;
+	border-top:none;
+	padding:0.5em 1em;
+	margin-left:20%;
+}
+#bckffcForm .checklist div {
+	width:30%;
+}
+
+#bckffcForm fieldset a.preview {
+	clear:both;
+	float:left;
+	margin-left:165px;
+}
+#bckffcForm fieldset a.preview img{
+	width:200px;
+	background:transparent no-repeat center center;
+	background-size:auto 100%;
+	border: 1px solid #999;
+	border-radius:1em;
+}

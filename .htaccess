@@ -1,0 +1,14 @@
+Options -Indexes
+
+<FilesMatch "\.(ugml)$">
+    Deny From All
+</FilesMatch>
+<FilesMatch "\.(ugd)$">
+    Deny From All
+</FilesMatch>
+<FilesMatch "\.(sql)$">
+    Deny From All
+</FilesMatch>
+<FilesMatch "\.(tpl)$">
+    Deny From All
+</FilesMatch>

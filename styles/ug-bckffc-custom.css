@@ -1,0 +1,5 @@
+#content tr td				 {background-color:#ffffff;padding-left:1em;}
+#content tr.red td			 {background-color:#ffdddd;}
+#content tr.green td		 {background-color:#ddffdd;}
+#content tr.white td		 {background-color:#ffffff;}
+#content tr td.action	 {background-color:#5a5a5a !important;}
