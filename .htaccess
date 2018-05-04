@@ -1,14 +1,18 @@
+RewriteEngine On
+RewriteBase /ugml
+RewriteRule ^(.*).htm(.*)$ scripts/index.php?f=../$1&%{QUERY_STRING} [L]
+
 Options -Indexes
 
 <FilesMatch "\.(ugml)$">
-    Deny From All
+	Deny From All
 </FilesMatch>
 <FilesMatch "\.(ugd)$">
-    Deny From All
+	Deny From All
 </FilesMatch>
 <FilesMatch "\.(sql)$">
-    Deny From All
+	Deny From All
 </FilesMatch>
 <FilesMatch "\.(tpl)$">
-    Deny From All
+	Deny From All
 </FilesMatch>

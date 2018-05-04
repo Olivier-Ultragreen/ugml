@@ -20,5 +20,5 @@
 	<div id="page">
 		<nav>
 			[rubrique type=|root| tpl=|../templates/bckffc/bckffc-nav-list-item.tpl|/]
-			<li><a href="bckffc-login.php">Déconnexion</a></li>
+			<li><a href="bckffc-login.htm">Déconnexion</a></li>
 		</nav>

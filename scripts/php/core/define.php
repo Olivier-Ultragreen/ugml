@@ -33,7 +33,7 @@ define('DEFTAG_STRUCTURE', "DEFTAG=(.*)=>(.*)");
 define('CALL_VAR_STRUCTURE', "\[(.*)\]");
 
 define('PROJECT_DIRECTORY',dirname(dirname($_SERVER['PATH_TRANSLATED'])));
-define('BCKFFC_DIR','backoffice');
+define('BCKFFC_DIR','bckffc');
 
 define('DEBUG',false);
 ?>

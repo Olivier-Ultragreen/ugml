@@ -511,9 +511,8 @@ function bckffcActionCheckSession($hArgs = array()) {
 if(!function_exists('bckffcActionACLRestrictedNav')) {
 function bckffcActionACLRestrictedNav($hArgs = array()) {
 	$hDefault = array(
-		'path'		 => './',
+		'path'		 => PROJECT_DIRECTORY.'/'.BCKFFC_DIR,
 		'type'		 => $GLOBALS['UGML']['REQUESTED_UGML_FILE']['HEADER']['type'],
-		'group'		 => 'bckffc_group', // table containing the groups for backoffice
 		'tpl'		 => '../templates/bckffc/bckffc-nav-list-item.tpl',
 		'on'		 => 'selected' // css class for currently viewed page
 	);
