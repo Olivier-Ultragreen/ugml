@@ -2,11 +2,11 @@ DEFEXT=include=> parseUgml|
 DEFEXT=Services::makeInstance=> Services::makeInstance|public/ug-services-css.php
 DEFEXT=UGServicesCSSInjector=> UGServicesCSSInjector::call|public/ug-services-css.php
 
-DEFEXT=login=> bckffcActionLogin|private/fc2.php
-DEFEXT=checkSession=> bckffcActionCheckSession|private/fc2.php
-DEFEXT=rubrique=> bckffcActionACLRestrictedNav|private/fc2.php
+DEFEXT=login=> bckffcActionLogin|public/ug-bckffc-mysql.php
+DEFEXT=checkSession=> bckffcActionCheckSession|public/ug-bckffc-mysql.php
+DEFEXT=rubrique=> bckffcActionACLRestrictedNav|public/ug-bckffc-mysql.php
 
-DEFEXT=bckffcStd=> bckffcInterface|private/fc2.php
+DEFEXT=bckffcStd=> bckffcInterface|public/ug-bckffc-mysql.php
 
 DEFEXT=selectRawData=> selectRawData|public/ug-pages-mysql.php
 DEFEXT=selectQueryToTpl=> selectQueryToTpl|public/ug-pages-mysql.php
