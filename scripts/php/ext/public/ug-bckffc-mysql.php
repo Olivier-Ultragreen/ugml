@@ -313,7 +313,7 @@ function showForm($hArgs = array()) {
 		if(!empty($hFieldValues[$hFieldInfo['name']])) {
 			$hFieldInfo['value']=$hFieldValues[$hFieldInfo['name']];
 		}
-		elseif(!empty($hFieldInfo['default'])) {
+		elseif(!empty($hFieldInfo['default']) || $hFieldInfo['default']==0) {
 			$hFieldInfo['value']=$hFieldInfo['default'];
 		}
 		else $hFieldInfo['value']='';
@@ -606,7 +606,7 @@ if(!function_exists('bckffcActionImport')) {
 						$hData[$hFields[$i+1]['name']] = $value;
 					}
 					foreach($hFields as $i => $hField) {
-						if($hField['name']!='id' && empty($hData[$hField['name']]) && !empty($hField['default'])) {
+						if($hField['name']!='id' && empty($hData[$hField['name']])) {
 							$hData[$hField['name']] = $hField['default'];
 						}
 					}

@@ -80,7 +80,7 @@ function getTableInfo($sqlTable) {
 	$i=0;
 	while($hRow=mysqli_fetch_assoc($sqlResult)) {
 		$hFields[$i]['name']=$hRow['Field'];
-		if(!empty($hRow['Default'])) $hFields[$i]['default']=$hRow['Default'];
+		if(true || !empty($hRow['Default'])) $hFields[$i]['default']=$hRow['Default'];
 		if(isset($hTranslation["{$sqlTable}.{$hRow['Field']}.alias"])) $hFields[$i]['alias'] = $hTranslation["{$sqlTable}.{$hRow['Field']}.alias"];
 		else $hFields[$i]['alias'] = $hRow['Field'];
 		
@@ -164,26 +164,13 @@ function getUniqueIndexes($sqlTable) {
 // fields of $sqlTable 
 function insert($sqlTable,$hData = array()) {
 	global $DB;
-	
-	/*
-	$aFields = getUniqueIndexes($sqlTable);
-	if(empty($aFields)) {
-		$sqlInsert="INSERT INTO `$sqlTable` VALUES();";
-	}
-	else {
-		$sqlInsert = "INSERT INTO `$sqlTable` SET ";
-		foreach($aFields as $sField) {
-			$sqlInsert .= "`$sField`='{$hData[$sField]}', ";
-		}
-		$sqlInsert = substr($sqlInsert,0,-2);
-		$sqlInsert .= ';';
-	}
-	*/
+
 	$sqlInsert = "INSERT INTO `$sqlTable` (`%s`) VALUES(NULL,'%s')";
 	$aFields = getFields($sqlTable);
+	$hTableDescription = getTableInfo($sqlTable);
 	$aValues = array();
 	$fields = implode('`,`',$aFields);
-	foreach($aFields as $field) {
+	foreach($aFields as $k => $field) {
 		if($field!='id') {
 			if(isset($hData[$field]) && !is_array($hData[$field])) {
 				if(!get_magic_quotes_gpc()) {
@@ -194,20 +181,26 @@ function insert($sqlTable,$hData = array()) {
 				}
 			}
 			else {
-				$aValues[]='';
+				if(!empty($hTableDescription[$k]['default']) || $hTableDescription[$k]['default']==0) {
+					$aValues[] = $hTableDescription[$k]['default'];
+				}
+				else {
+					$aValues[]='';
+				}
 			}
 		}
 	}
 	$values = implode("','",$aValues);
 	$sqlInsert = sprintf($sqlInsert,$fields,$values);
-	
-//	die($sqlInsert);
-	
-	mysqli_query($DB, $sqlInsert);
-	$hData['id'] = mysqli_insert_id($DB);
-	update($sqlTable,$hData);
-// 	die($sqlInsert);
-	return $hData['id'];
+	$bSuccess = mysqli_query($DB, $sqlInsert);
+	if($bSuccess === TRUE) {
+		$hData['id'] = mysqli_insert_id($DB);
+		update($sqlTable,$hData);
+		return $hData['id'];
+	}
+	else {
+		return FALSE;
+	}
 }
 
 // inject $hData into an existing database record

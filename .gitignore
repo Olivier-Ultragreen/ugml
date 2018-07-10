@@ -7,3 +7,4 @@ scripts/php/lib/phpmailer/*
 scripts/php/lib/fpdf/*
 scripts/php/lib/fc2/*
 scripts/js/jquery-monopage-menu.js
+.DS_Store
