@@ -194,8 +194,9 @@ function insert($sqlTable,$hData = array()) {
 	$sqlInsert = sprintf($sqlInsert,$fields,$values);
 	$bSuccess = mysqli_query($DB, $sqlInsert);
 	if($bSuccess === TRUE) {
-		$hData['id'] = mysqli_insert_id($DB);
-		update($sqlTable,$hData);
+		$hData4Update = $hData;
+		$hData4Update['id'] = mysqli_insert_id($DB);
+		update($sqlTable,$hData4Update);
 		return $hData['id'];
 	}
 	else {
