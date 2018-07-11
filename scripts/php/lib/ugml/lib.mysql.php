@@ -197,7 +197,7 @@ function insert($sqlTable,$hData = array()) {
 		$hData4Update = $hData;
 		$hData4Update['id'] = mysqli_insert_id($DB);
 		update($sqlTable,$hData4Update);
-		return $hData['id'];
+		return $hData4Update['id'];
 	}
 	else {
 		return FALSE;
