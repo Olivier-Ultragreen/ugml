@@ -3,7 +3,7 @@
 <div id="content">
 [bckffcStd 
 	table=|bckffc_user| 
-	globalActions=|add,import,export| 
+	globalActions=|export,add,import| 
 	itemActions=|edit,copy,delete| 
 	groupActions=|delete|
 	limit=|10|
