@@ -1,0 +1,12 @@
+[HEADER ugd=|ug-bckffc.ugd| type=|root| lang=|fr| country=|FR| nav=|ok| title=|gestion des pages| position=|00| group=|root|/]
+[include file=|../templates/bckffc/bckffc-start.ugml|/]
+<div id="content">
+[bckffcStd 
+	table=|cms_page| 
+	globalActions=|export,add,import| 
+	itemActions=|edit,copy,delete| 
+	groupActions=|delete|
+	limit=|10|
+/]
+</div>
+[include file=|../templates/bckffc/bckffc-stop.ugml|/]

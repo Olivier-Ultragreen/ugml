@@ -55,31 +55,31 @@ function sendmail($hArgs = array()) {
 	extract(array_merge($hDefault,$hArgs));
 	
 	
-	$oMail= new PHPMailer();
+	$oMail= new PHPMailer\PHPMailer\PHPMailer();
 	$oMail->CharSet = 'UTF-8';
 	// Commenter les lignes ci-dessous pour un envoi via la fonction mail() de PHP et en ignorant la configuration SMTP
 	$oMail->IsSMTP();
 	$oMail->SMTPSecure	 = 'tls';
 	$oMail->SMTPAuth	 = true;
 	if(SENDMAIL_DEBUG) $oMail->SMTPDebug	 = 2;
-	$oMail->Host		 = $smtp_host;
-	$oMail->Username	 = $smtp_user;
-	$oMail->Password	 = $smtp_pwd;
+	$oMail->Host		 = SMTP_HOST;
+	$oMail->Username	 = SMTP_USER;
+	$oMail->Password	 = SMTP_PWD;
+	// 
 	
 	$oMail->From		 = $from;
 	$oMail->FromName	 = $from_name;
-	
+
 	$oMail->AddAddress(trim($to));
 	if(!empty($cc) && trim($cc)!='') $oMail->AddAddress(trim($cc));
 	if(!empty($bcc) && trim($bcc)!='') $oMail->AddBCC(trim($bcc));
 	$oMail->Subject = $subject;
 	
-	$oMail->MsgHTML($message);
+	$oMail->isHTML(true);
+	$oMail->Body = $message;
 	// Décommenter la ligne ci-dessous pour envoyer une version non HTML en sus de la version HTML du mail
 	// $oMail->AltBody = strip_tags(stristr($message,'<body'));
 
-	$oMail->Body = $message;
-	
 	if(!empty($attachment)) {
 		foreach($attachment as $file) {
 			if(!is_array($file)) {
@@ -95,12 +95,12 @@ function sendmail($hArgs = array()) {
 			$oMail->AddEmbeddedImage($file, $cid);
 		}
 	}
-	$sOutput = $oMail->Send();
-	if(SENDMAIL_DEBUG) {
-		die($sOutput);
-	}
-	else {
-		return $sOutput;
+	try {
+		$oMail->Send();
+	} catch (Exception $e) {
+		die($e->errorMessage());
+	} catch (\Exception $e) {
+		die($e->getMessage());
 	}
 }
 ?>
