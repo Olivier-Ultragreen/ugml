@@ -698,6 +698,7 @@ function bckffcActionEdit($hArgs = array()) {
 		// treats data 
 		if(!empty($_POST['id'])) {
 			$hData = array_merge($_POST,$_FILES);
+			$hData['updated_at']=date('Y-m-d H:i:s');
 			update($table,$hData);
 		}
 		header("Location: {$_SERVER['REQUEST_URI']}");
@@ -743,6 +744,8 @@ function bckffcActionCopy($hArgs = array()) {
 		$sqlResult = mysqli_query($DB,$sqlSelect);
 		if($sqlResult && $hData = mysqli_fetch_assoc($sqlResult)) {
 			unset($hData['id']);
+			$hData['inserted_at'] = date('Y-m-d H:i:s');
+			$hData['updated_at'] = '0000-00-00 00:00:00';
 			insert($table,$hData);
 			header("Location: {$_SERVER['HTTP_REFERER']}");
 			exit();
