@@ -57,13 +57,15 @@ function sendmail($hArgs = array()) {
 	
 	$oMail= new PHPMailer();
 	$oMail->CharSet = 'UTF-8';
-	// $oMail->IsSMTP();
-	// $oMail->SMTPSecure	 = 'tls';
-	// $oMail->SMTPAuth	 = true;
-	// if(SENDMAIL_DEBUG) $oMail->SMTPDebug	 = 2;
-	// $oMail->Host		 = $smtp_host;
-	// $oMail->Username	 = $smtp_user;
-	// $oMail->Password	 = $smtp_pwd;
+	// Commenter les lignes ci-dessous pour un envoi via la fonction mail() de PHP et en ignorant la configuration SMTP
+	$oMail->IsSMTP();
+	$oMail->SMTPSecure	 = 'tls';
+	$oMail->SMTPAuth	 = true;
+	if(SENDMAIL_DEBUG) $oMail->SMTPDebug	 = 2;
+	$oMail->Host		 = $smtp_host;
+	$oMail->Username	 = $smtp_user;
+	$oMail->Password	 = $smtp_pwd;
+	
 	$oMail->From		 = $from;
 	$oMail->FromName	 = $from_name;
 	
@@ -72,8 +74,10 @@ function sendmail($hArgs = array()) {
 	if(!empty($bcc) && trim($bcc)!='') $oMail->AddBCC(trim($bcc));
 	$oMail->Subject = $subject;
 	
+	$oMail->MsgHTML($message);
+	// Décommenter la ligne ci-dessous pour envoyer une version non HTML en sus de la version HTML du mail
 	// $oMail->AltBody = strip_tags(stristr($message,'<body'));
-	// $oMail->MsgHTML($message);
+
 	$oMail->Body = $message;
 	
 	if(!empty($attachment)) {
