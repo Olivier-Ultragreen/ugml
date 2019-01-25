@@ -1,11 +1,12 @@
 RewriteEngine On
 RewriteBase /ugml
-RewriteRule ^(.*).htm(.*)$ scripts/index.php?f=../$1&%{QUERY_STRING} [L]
+RewriteRule ^(.*)/$ scripts/index.php?f=../$1&%{QUERY_STRING} [L]
+RewriteRule ^(.*).ugml$ scripts/index.php?f=../$1.ugml&%{QUERY_STRING} [L]
 
 Options -Indexes
 
 <FilesMatch "\.(ugml)$">
-	Deny From All
+	#Deny From All
 </FilesMatch>
 <FilesMatch "\.(ugd)$">
 	Deny From All

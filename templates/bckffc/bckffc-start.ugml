@@ -11,8 +11,8 @@
 	<script type="text/javascript" src="//code.jquery.com/jquery.min.js"></script>
 	<script type="text/javascript" src="//code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
 	
-	<script type="text/javascript" src="../scripts/js/jquery-all-form.js"></script>
-	<script type="text/javascript" src="../scripts/js/jquery-bckffc-calls.js"></script>
+	<script type="text/javascript" src="[site.root.url]scripts/js/jquery-all-form.js"></script>
+	<script type="text/javascript" src="[site.root.url]scripts/js/jquery-bckffc-calls.js"></script>
 </head>
 <body>
 	<div id="message"></div>
@@ -20,5 +20,5 @@
 	<div id="page">
 		<nav>
 			[rubrique type=|root| tpl=|../templates/bckffc/bckffc-nav-list-item.tpl|/]
-			<li><a href="bckffc-login.htm">Déconnexion</a></li>
+			<li><a href="[site.root.url]bckffc/bckffc-login/">Déconnexion</a></li>
 		</nav>

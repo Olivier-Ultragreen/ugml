@@ -510,6 +510,7 @@ function bckffcActionCheckSession($hArgs = array()) {
 
 if(!function_exists('bckffcActionACLRestrictedNav')) {
 function bckffcActionACLRestrictedNav($hArgs = array()) {
+	global $hTranslation;
 	$hDefault = array(
 		'path'		 => PROJECT_DIRECTORY.'/'.BCKFFC_DIR,
 		'type'		 => $GLOBALS['UGML']['REQUESTED_UGML_FILE']['HEADER']['type'],
@@ -530,13 +531,18 @@ function bckffcActionACLRestrictedNav($hArgs = array()) {
 		'order'		 => 'position',
 		'dir'		 => 'ASC'
 	));
+	// printArray($hFiles);
 	foreach($hFiles as $hFile) {
 		if(empty($hFile['group']) or (!empty($_SESSION["_profile_id"]) and $hFile['group']==$_SESSION["_profile_id"])) {
 			$hFile['classCss'] = '';
-			if(basename($GLOBALS['UGML']['REQUESTED_UGML_FILE']['FILENAME'])==basename($hFile['filename'])) {
+			if(basename($GLOBALS['UGML']['REQUESTED_UGML_FILE']['FILENAME']) == basename($hFile['filename'])) {
 				$hFile['classCss']=" class=\"$on\""; 
 			}
+			$hFile['EXT'] = '';
 			list($hFile['url']) = explode('.',basename($hFile['filename']));
+			if($hTranslation['EXT'] == '.php') $hFile['url'] = $hFile['url'].'.php';
+			elseif($hTranslation['EXT'] == '.ugml') $hFile['url'] = $hFile['url'].'.ugml';
+			else $hFile['url'] = '../'.$hFile['url'].'/';
 			$sOutput .= inject(array('data'=>$hFile,'tpl'=>$tpl));
 		}
 	}

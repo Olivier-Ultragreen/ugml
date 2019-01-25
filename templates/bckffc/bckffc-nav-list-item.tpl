@@ -1,1 +1,1 @@
-<li[classCss]><a href="[url][EXT]" title="[title]">[title]</a></li>
+<li[classCss]><a href="[url]" title="[title]">[title]</a></li>

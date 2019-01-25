@@ -20,7 +20,7 @@ Class UGServicesCSSInjector extends UGServices {
 		global $hCSSColors,$hCSSFonts;
 		extract($hArgs);
 		$sOutput = '';
-		$tpl = "\t".'<link rel="stylesheet" href="../services/ug-css-generator.php?stylesheet=%s" type="text/css" charset="utf-8"/>'."\n";
+		$tpl = "\t".'<link rel="stylesheet" href="'.HTTP_ROOT.'services/ug-css-generator.php?stylesheet=%s" type="text/css" charset="utf-8"/>'."\n";
 		// en dev on garde les fichiers séparés pour une meilleure lecture debuggage
 		if($_SERVER['HTTP_HOST']=='localhost') {
 			$aFiles = explode(',',$files);
