@@ -1544,7 +1544,7 @@ class PHPMailer
      *
      * @return bool
      */
-    protected function sendmailSend($header, $body)
+    protected function sendmail($header, $body)
     {
         // CVE-2016-10033, CVE-2016-10045: Don't pass -f if characters will be escaped.
         if (!empty($this->Sender) and self::isShellSafe($this->Sender)) {

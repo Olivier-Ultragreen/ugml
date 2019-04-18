@@ -8,19 +8,20 @@ body	{min-width:950px;height:100%;}
 	min-height:600px;
 	height:100%;
 }
-header		{
+header {
 	height:54px;
 	background: transparent url(../media/_images/logo.jpg) no-repeat 1em center;
 	border-bottom: 1px solid #999;
 	padding:1em 0px;
 }
-nav 		{
+nav {
+	position:fixed;
+	top:0px;
+	left:0px;
+	bottom:0px;
 	display:block;
 	float:left;
-	min-width:200px;
-	min-height:500px;
 	width:15%;
-	margin-right:1%;
 	border-right: 1px solid #999;
 	padding:2em 0px;
 }
@@ -45,19 +46,37 @@ nav li.selected a {
 /* ////////////////////
 /// CONTENT - info   */
 #content		{
+	position:absolute;
+	top:0px;
+	left:15%;
+	right:0px;
 	float:left;
-	min-width:700px !important;
-	width:70%;
-	/*overflow-x: scroll;*/
-	padding-top:2em;
+	width:85%;
+	padding:2em;
 }
-#bckffc-login		{
-	float:left;
-	min-width:700px !important;
-	width:70%;
-	overflow-x: hidden;
-	padding-top:2em;
-	margin-left:15%;
+#bckffcLogin	{
+	position:absolute;
+	top:0px;
+	left:0px;
+	right:0px;
+	bottom:0px;
+	background-color:yellow;
+	width:100%;
+	padding:1em;
+}
+#bckffcLogin form > fieldset {
+	border:1px solid black;
+	padding:2em;
+	background-color:white;
+	-moz-box-shadow: 7px 7px 5px #999999;
+	-webkit-box-shadow: 7px 7px 5px #999999;
+	-o-box-shadow: 7px 7px 5px#999999;
+	box-shadow: 7px 7px 5px #999999;
+	filter:progid:DXImageTransform.Microsoft.Shadow(color='#999', Direction=135, Strength=5);
+}
+#bckffcLogin h1 {
+	font-size:1.5em;
+	margin-bottom:1em;
 }
 
 #globalActions	{
@@ -120,8 +139,7 @@ form.actionGlobales {width:360px;}
 /**/
 #searchForm {display:block;}
 
-#content table{
-	min-width:700px;
+#content table {
 	width:100%;
 	border: 1px solid #bfbfbf;
 }

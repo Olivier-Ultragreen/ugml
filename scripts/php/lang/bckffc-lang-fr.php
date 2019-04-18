@@ -14,9 +14,9 @@ $hTranslation['bckffcNextPage'] = 'suivant';
 
 $hTranslation['bckffcLoginFailure'] = "Echec de l'authetification";
 
-$hTranslation['bckffcGroupActionSendInvitation'] = "envoyer invitation";
-$hTranslation['bckffcGroupActionSendReminder'] = "envoyer relance";
-$hTranslation['bckffcGroupActionSendConfirmation'] = "envoyer confirmation";
+$hTranslation['bckffcUploadFile'] = 'Choissez un fichier';
+
+$hTranslation['NONE_SELECTED'] = "Aucun élément sélectionné";
 
 }
 ?>

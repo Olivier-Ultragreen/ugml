@@ -1,7 +1,7 @@
 [HEADER ugd=|_void.ugd|/]
 [checkSession param=|default|/]
 <!DOCTYPE html>
-<html lang="en-UK">
+<html lang="[HEADER:lang]-[HEADER:country]">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>[site.title] / backoffice : [title]</title>

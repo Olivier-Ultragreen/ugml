@@ -96,7 +96,7 @@ function sendmail($hArgs = array()) {
 		}
 	}
 	try {
-		$oMail->Send();
+		return $oMail->Send();
 	} catch (Exception $e) {
 		die($e->errorMessage());
 	} catch (\Exception $e) {

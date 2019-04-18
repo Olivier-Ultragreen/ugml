@@ -36,7 +36,6 @@ $pFile=@fopen(realpath($sRequestedUgmlFile),'r');
 if(!$pFile) {
 	// logs error for debug
 	$GLOBALS['UGML']['DEBUG']="ERROR : ".sprintf(ERR_FILE_OPEN, $sRequestedUgmlFile);
-	$iOccurrence++;
 	return '';
 }
 // memorizes the requested ugml file data in $GLOBALS['UGML']

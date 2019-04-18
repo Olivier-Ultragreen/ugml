@@ -1,19 +1,22 @@
-<div id="bckffc-login">
-	<form id="bckffcForm" method="post" action="bckffc-login[EXT]">
-		<input type="hidden" name="action" value="login"/>
-		<fieldset class="ftext">
-			<label for="login">identifiant</label>
-			<input type="text" name="login" value="" id="login" class="mandatory" required/>
-		</fieldset>
-		<fieldset class="fpass">
-			<label for="pwd">mot de passe</label>
-			<input type="password" name="pwd" value="" id="pwd" class="mandatory" required/>
-		</fieldset>
-		<fieldset class="fsubpic">
-			<label class="invisible">button</label><input class="button" type="submit" value="connexion"/>
+<div id="bckffcLogin">
+	<form method="post" action="bckffc-login[EXT]" class="col col-12 col-lg-offset-4 col-lg-4">
+		<fieldset class="layout full left">
+			<input type="hidden" name="action" value="login"/>
+			<h1 class="layout full left aligncenter">Identifiez-vous</h1>
+			<fieldset class="layout full left">
+				<label class="hidden">Identifiant</label>
+				<input type="text" name="login" value="" class="layout full left mandatory" placeholder="Identifiant"/>
+			</fieldset>
+			<fieldset class="layout full left">
+				<label class="hidden">Mot de passe</label>
+				<input type="password" name="pwd" value="" class="layout full left mandatory" placeholder="Mot de passe"/>
+			</fieldset>
+			<fieldset class="layout full left aligncenter">
+				<input class="button" type="submit" value="connexion"/>
+			</fieldset>
 		</fieldset>
 	</form>
 	<div class="error-msg">
-		[error-msg]
+	[error-msg]
 	</div>			<!-- mustdo -->
 </div>

@@ -26,11 +26,16 @@ $(document).ready(function() {
 		$(this).parent().find('label').text($(this).val().substring($(this).val().lastIndexOf("\\") + 1));
 	});
 	
+	$('.upload input[type="file"]').on('change',function(){
+		$(this).parent().find('label').text($(this).val().substring($(this).val().lastIndexOf("\\") + 1));
+	});
+	
+	
 	$('a.bckffcActionDelete').click(function(){if(!confirm('Attention êtes vous sur de vouloir supprimer ??')) return false;});
 	$('.datePick').datepicker({dateFormat: 'yy-mm-dd'});
 	
 	// waiting for a better solution we'll hide the navigation bar
-	if($('#bckffc-login').length>0) {
+	if($('#bckffcLogin').length>0) {
 		$('nav').hide();
 	}
 	
@@ -60,31 +65,16 @@ $(document).ready(function() {
 	});
 	$('.data-list li').on('click',function() {
 		if(!$(this).hasClass('free')) {
-			$(this).parent().after('<input type="text" class="layout left openlist" style="clear:left;">');
-			$(this).parent().parent().find('.openlist:eq(1)').val($(this).text());
-			$(this).parent().parent().find('.openlist:eq(1)').attr('readonly', true);
+			$(this).parent().parent().find('.openlist').val($(this).text());
+			$(this).parent().parent().find('[type="hidden"]').val($(this).attr('data'));
 			$(this).parent().hide();
 		}
 		else {
-			$(this).parent().after('<input type="text" class="layout left openlist" style="clear:left;">');
-			$(this).parent().parent().find('.openlist:eq(1)').val($(this).text());
-			$(this).parent().parent().find('.openlist:eq(1)').attr('readonly', false);
-			$(this).parent().parent().find('.openlist:eq(1)').focus();
+			$(this).parent().parent().find('.openlist').val($(this).text());
+			$(this).parent().parent().find('.openlist').attr('readonly', false);
+			$(this).parent().parent().find('.openlist').focus();
 			$(this).parent().hide();
 		}
-		var newvalue = '';
-		var hiddenfield = $(this).parent().parent().parent().find('.list');
-		var hiddenvalue = hiddenfield.val();
-		var a = new Array();
-		var newarray = new Array();
-
-		if(hiddenvalue.length>0) a = hiddenvalue.split(',');
-		for(var i=0;i<a.length;i++) {
-			newarray.push(a[i]);
-		}
-		newarray.push($(this).attr('data'));
-		newvalue = newarray.join(',');
-		hiddenfield.attr('value',newvalue).val(newvalue);
 	});
 
 	// gestion de la supression des relations entre les entités

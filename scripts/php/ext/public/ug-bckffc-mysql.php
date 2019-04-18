@@ -1036,8 +1036,8 @@ function showFormItemForeignKey($hArgs = array()) {
 
 	$lang = $GLOBALS['UGML']['REQUESTED_UGML_FILE']['HEADER']['lang'];
 	
-	$tplMain	 = getTpl('../templates/bckffc/bckffc-form-input-select.tpl');
-	$tplSub		 = getTpl('../templates/bckffc/bckffc-form-input-select-option.tpl');
+	$tplMain	 = getTpl('../templates/bckffc/bckffc-form-input-data-list.tpl');
+	$tplSub		 = getTpl('../templates/bckffc/bckffc-form-input-data-list-item.tpl');
 	$hMain		 = array();
 	$hSub		 = array();
 
@@ -1048,6 +1048,7 @@ function showFormItemForeignKey($hArgs = array()) {
 	// fills the data necesssary for the main template
 	$hMain['name']			 = $hFieldInfo['name'];
 	$hMain['value']			 = $hFieldInfo['value'];
+	$hMain['label']			 = '';
 	$hMain['alias']			 = $hFieldInfo['alias'];
 	$hMain['options']		 = '';
 	// fills inject the "zero" value 
@@ -1066,6 +1067,7 @@ function showFormItemForeignKey($hArgs = array()) {
 	$sqlResult = mysqli_query($DB, $sqlSelect);
 	if($sqlResult) {
 		while($hSub = mysqli_fetch_assoc($sqlResult)) {
+			if( $hSub['value'] == $hFieldInfo['value'] ) $hMain['label'] = $hSub['label'];
 			$hMain['options'].=inject(array('tpl'=>$tplSub,'data'=>$hSub));
 		}
 		mysqli_free_result($sqlResult);
@@ -1162,14 +1164,15 @@ function showFormItemEnumList($hArgs = array()) {
 
 	$lang = $GLOBALS['UGML']['REQUESTED_UGML_FILE']['HEADER']['lang'];
 	
-	$tplMain	 = getTpl('../templates/bckffc/bckffc-form-input-select.tpl');
-	$tplSub		 = getTpl('../templates/bckffc/bckffc-form-input-select-option.tpl');
+	$tplMain	 = getTpl('../templates/bckffc/bckffc-form-input-data-list.tpl');
+	$tplSub		 = getTpl('../templates/bckffc/bckffc-form-input-data-list-item.tpl');
 	$hMain		 = array();
 	$hSub		 = array();
 
 	// place your smart code below
 	$hMain['name']		 = $hFieldInfo['name'];
 	$hMain['value']		 = $hFieldInfo['value'];
+	$hMain['label']		 = $hFieldInfo['value'];
 	$hMain['alias']		 = $hFieldInfo['alias'];
 	$hMain['options']	 = '';
 	
