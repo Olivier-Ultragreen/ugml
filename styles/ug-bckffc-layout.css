@@ -24,6 +24,8 @@ nav {
 	width:15%;
 	border-right: 1px solid #999;
 	padding:2em 0px;
+	background-color:white;
+	z-index:10;
 }
 nav h2		{margin-top:2em;text-transform:uppercase}
 nav ul		{

@@ -1036,8 +1036,12 @@ function showFormItemForeignKey($hArgs = array()) {
 
 	$lang = $GLOBALS['UGML']['REQUESTED_UGML_FILE']['HEADER']['lang'];
 	
-	$tplMain	 = getTpl('../templates/bckffc/bckffc-form-input-data-list.tpl');
-	$tplSub		 = getTpl('../templates/bckffc/bckffc-form-input-data-list-item.tpl');
+	// $tplMain	 = getTpl('../templates/bckffc/bckffc-form-input-data-list.tpl');
+	// $tplSub		 = getTpl('../templates/bckffc/bckffc-form-input-data-list-item.tpl');
+
+	$tplMain	 = getTpl('../templates/bckffc/bckffc-form-input-select.tpl');
+	$tplSub		 = getTpl('../templates/bckffc/bckffc-form-input-select-option.tpl');
+
 	$hMain		 = array();
 	$hSub		 = array();
 
@@ -1164,8 +1168,12 @@ function showFormItemEnumList($hArgs = array()) {
 
 	$lang = $GLOBALS['UGML']['REQUESTED_UGML_FILE']['HEADER']['lang'];
 	
-	$tplMain	 = getTpl('../templates/bckffc/bckffc-form-input-data-list.tpl');
-	$tplSub		 = getTpl('../templates/bckffc/bckffc-form-input-data-list-item.tpl');
+	// $tplMain	 = getTpl('../templates/bckffc/bckffc-form-input-data-list.tpl');
+	// $tplSub		 = getTpl('../templates/bckffc/bckffc-form-input-data-list-item.tpl');
+	
+	$tplMain	 = getTpl('../templates/bckffc/bckffc-form-input-select.tpl');
+	$tplSub		 = getTpl('../templates/bckffc/bckffc-form-input-select-option.tpl');
+	
 	$hMain		 = array();
 	$hSub		 = array();
 

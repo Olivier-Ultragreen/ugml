@@ -12,7 +12,36 @@
 #bckffcForm input[type="text"]		{font-size:inherit;font-family:inherit;width:100%;border: 1px solid [ultragreen];padding:0.5em 1em;border-radius:0.5em;}
 #bckffcForm input[type="password"]	{font-size:inherit;font-family:inherit;width:100%;border: 1px solid [ultragreen];padding:0.5em 1em;border-radius:0.5em;}
 #bckffcForm input[type="submit"]	{font-size:inherit;font-family:inherit;display:inline-block;text-align:center;width:auto;padding:0.5em 2em;border-radius:0.5em;text-transform:uppercase;}
-#bckffcForm select					{font-size:inherit;font-family:inherit;display:block; float:left; width:200px;margin-right:1em;}
+#bckffcForm select					{
+	background-color: rgb(255, 255, 255);
+	background-image: url("data:image/svg+xml;utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%201000%201805.18%22%3E%3Cpath%20fill%3D%22%23000000%22%20d%3D%22M461.6%2C643.4L10.9%2C79.9C-14.9%2C47.7%2C8%2C0%2C49.3%2C0h901.5c41.2%2C0%2C64.1%2C47.7%2C38.4%2C79.9L538.4%2C643.4%09C518.7%2C668%2C481.3%2C668%2C461.6%2C643.4z%22%20transform%3D%22rotate%28180%20500%20902.59%29%20translate%280%201143.28%29%22%3E%3C%2Fpath%3E%3Cpath%20fill%3D%22%23000000%22%20d%3D%22M461.6%2C643.4L10.9%2C79.9C-14.9%2C47.7%2C8%2C0%2C49.3%2C0h901.5c41.2%2C0%2C64.1%2C47.7%2C38.4%2C79.9L538.4%2C643.4%09C518.7%2C668%2C481.3%2C668%2C461.6%2C643.4z%22%20transform%3D%22translate%280%201143.28%29%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E");
+	background-position: calc(100% - 7px) 50%;
+	background-position-x: calc(100% - 7px);
+	background-position-y: 50%;
+	background-repeat: no-repeat;
+	background-size: 7px auto;
+	border: 1px solid green;
+	box-sizing: border-box;
+	color: rgb(0, 0, 0);
+	font-family: inherit;
+	font-size: inherit;
+	font-style: inherit;
+	font-weight: inherit;
+	height: 2rem;
+	width:100%;
+	line-height: 14px;
+	max-width: 100%;
+	padding-bottom: 7px;
+	padding-left: 7px;
+	padding-right: 28px;
+	padding-top: 7px;
+	transition-delay: 0s;
+	transition-duration: 0s;
+	transition-property: color, background-color, border, border-color;
+	transition-timing-function: ease-in-out;
+	-moz-appearance: none;
+	border-radius:0.5rem;
+}
 #bckffcForm textarea				{font-size:inherit;font-family:inherit;width:100%;border: 1px solid [ultragreen];padding:0.5em 1em;border-radius:0.5em;}
 
 #bckffcForm .upload label {
