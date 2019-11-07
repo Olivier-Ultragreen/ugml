@@ -44,9 +44,10 @@ function selectQueryToTpl($hArgs) {
 		'query'	 => '',
 		'tpl'	 => '',
 		'limit'	 => 0,
-		'nl2br'	 => false
+		'nl2br'	 => false,
+		'tplParsing'=> 'none' // values : none/before/after
 	);
-	// get input vars from hArgs and complete them with reviously defined default values
+	// get input vars from hArgs and complete them with previously defined default values
 	extract(array_merge($hDefault,$hArgs));
 	
 	// checks the input args and logs warnings if necessary
@@ -63,11 +64,13 @@ function selectQueryToTpl($hArgs) {
 		return '';
 	}
 
-	// parsing du template
-	$tpl=parseUgml(array('file'=>$tpl));
-	
-	// print $query.'<br/>';
-	
+	// récupération du template avec ou sans parsing préalable du fichier
+	if('before' == $tplParsing) {
+		$tpl = parseUgml(array('file'=>$tpl));
+	}
+	else {
+		$tpl = getTpl($tpl);
+	}
 	// si on souhaite une pagination
 	if(!empty($iLimit)) {
 		// initialisation de la page de resultat affichee
@@ -97,7 +100,6 @@ function selectQueryToTpl($hArgs) {
 		}
 	}
 	$GLOBALS['UGML']['DEBUG'][__FUNCTION__][$iOccurrence]=$query;
-	// print $query.'<br/>';
 	$sqlResult = mysqli_query($DB,$query);
 	while($hData = mysqli_fetch_assoc($sqlResult)) {
 		// ajout d'un selecteur sur le premier element souvent fort utile a nos amis integrateurs
@@ -108,6 +110,7 @@ function selectQueryToTpl($hArgs) {
 			$hData['cssFirst']='';
 		}
 		$sOutput.=inject(array('tpl'=>$tpl,'data'=>$hData,'nl2br'=>$nl2br));
+		if('after'==$tplParsing) $sOutput = parseStringAsUGML($sOutput);
 		$i++;
 	}
 	mysqli_free_result($sqlResult);
